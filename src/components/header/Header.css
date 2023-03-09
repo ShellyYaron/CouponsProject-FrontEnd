@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+.header {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+}
+
+
+.headerButton {
+    float: right;
+    display: flex;
+}
+
+.headerButton:hover {
+    background-color: #ffdbf2;
+    color: #000000;
+    cursor: pointer;
+}
+.leftHeader{
+    float: left;
+}
+
+.logo-image {
+    float: left;
+    margin-left: 7px;
+}

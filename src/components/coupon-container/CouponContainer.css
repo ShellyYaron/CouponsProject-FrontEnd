@@ -1,0 +1,8 @@
+.coupons-container {
+    padding: 2px 16px;
+    display: grid;
+    min-width: auto;
+    grid-template-columns: repeat(3, 1fr);
+
+
+}
