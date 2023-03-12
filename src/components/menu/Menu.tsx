@@ -1,4 +1,4 @@
-import "./Menu.css";
+import './Menu.css';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppState} from '../../redux/app-state';
 import {IoMdArrowDropdown} from 'react-icons/io';

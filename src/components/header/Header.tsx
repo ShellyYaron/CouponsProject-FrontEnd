@@ -9,6 +9,10 @@ function Header() {
     const [isRegisterModalOpen, setIsRegisterModalOpen] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
+    useEffect(() => {
+        setIsLoggedIn(localStorage.getItem("token") ? true : false);
+    }, []);
+
 
 
     const loginToggle = () => {
@@ -19,6 +23,7 @@ function Header() {
     };
     const handleLogout = () => {
         localStorage.clear();
+        window.location.reload();
         setIsLoggedIn(false);
     }
 
@@ -34,6 +39,7 @@ function Header() {
                 : <div className="d-flex justify-content-md-center">
                     <Button className="btn btn-light" onClick={loginToggle}>Login</Button>
                     <LoginModal isOpen={isLoginModalOpen} toggle={loginToggle} isLoggedIn={false} />
+                    <span className="space"></span>
                     <Button className="btn btn-light" onClick={registerToggle}>Register</Button>
                     <RegisterModal isOpen={isRegisterModalOpen} toggle={registerToggle}/>
                 </div>
