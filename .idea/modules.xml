@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../CodeSamples/Sockets.IO with login example/.idea/Sockets.IO with login example.iml" filepath="$PROJECT_DIR$/../CodeSamples/Sockets.IO with login example/.idea/Sockets.IO with login example.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../CodeSamples/SupermarketEndToEndExample/.idea/SupermarketEndToEndExample.iml" filepath="$PROJECT_DIR$/../CodeSamples/SupermarketEndToEndExample/.idea/SupermarketEndToEndExample.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/coupons-client-shelly-from-scratch.iml" filepath="$PROJECT_DIR$/.idea/coupons-client-shelly-from-scratch.iml" />
     </modules>
   </component>

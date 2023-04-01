@@ -40,4 +40,4 @@ function CouponContainer() {
 
   )
            }
-export default CouponContainer
+export default CouponContainer;

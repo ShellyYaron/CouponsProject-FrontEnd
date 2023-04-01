@@ -32,8 +32,18 @@ export function reduce(oldAppState: AppState = appStateInitialValue, action: Act
             newAppState.couponId = action.payload;
             break;
         case ActionType.getSortedCoupons:
-            newAppState.coupons =action.payload;
+            newAppState.coupons = action.payload;
             break;
+        case ActionType.updateCoupon:
+            newAppState.coupons = action.payload;
+            break;
+        case ActionType.addCoupon:
+            newAppState.coupons = action.payload;
+            break;
+        case ActionType.deleteCoupon:
+            newAppState.coupons = action.payload;
+            break;
+
     }
 
     return newAppState;

@@ -4,5 +4,9 @@ export enum ActionType {
     SuccessfulLogin,
     GetCouponById,
     getCouponId,
-    getSortedCoupons
+    getSortedCoupons,
+
+    updateCoupon,
+    addCoupon,
+    deleteCoupon,
 }

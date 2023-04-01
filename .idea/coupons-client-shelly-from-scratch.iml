@@ -8,7 +8,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="SupermarketEndToEndExample" />
     <orderEntry type="module" module-name="Sockets.IO with login example" />
   </component>
 </module>

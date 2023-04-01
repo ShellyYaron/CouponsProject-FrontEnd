@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState} from 'react';
 import {ICoupon} from '../../models/ICoupon';
 import "./CouponCard.css"
 import {GiShoppingCart} from 'react-icons/gi';
@@ -20,8 +20,27 @@ export interface IProps {
 
 function CouponCard(props: IProps) {
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-
-
+    const dispatch = useDispatch();
+async function addCoupon() {
+    axios
+        .put("http://localhost:8080/coupons")
+        .then(response => {
+            const serverResponse = response.data
+            console.log(serverResponse)
+            dispatch({type: ActionType.addCoupon, payload: serverResponse})
+        })
+        .catch(error => alert(error.message));
+}
+async function deleteCoupon(id: number) {
+    axios
+        .delete("http://localhost:8080/coupons/{id}")
+        .then(response => {
+            const serverResponse = response.data
+            console.log(serverResponse)
+            dispatch({type: ActionType.deleteCoupon, payload: serverResponse})
+        })
+        .catch(error => alert(error.message));
+}
     const loginToggle = () => {
         setIsLoginModalOpen(!isLoginModalOpen);
     };
@@ -29,13 +48,13 @@ function CouponCard(props: IProps) {
     const couponToggle = () => {
         setIsCouponModalOpen(!isCouponModalOpen);
     }
-
+    // <Button className="btn btn-light btn-circle btn-xl" onClick={addCoupon}>Add </Button>
     let couponImage = props.coupon.image;
     return (
         <div className="coupon-card">
-            {localStorage.getItem("administrator") ? <> <Button
-                className="btn btn-light btn-circle btn-xl">Add</Button><Button
-                className="btn btn-light btn-circle btn-xl">Edit</Button></> : null}
+            {localStorage.getItem("token") ? <>
+                <Button className="btn btn-light btn-circle btn-xl">Delete</Button>
+            </> : null}
             <div><img className="coupon-card-image" src={couponImage} alt="coupon-image"/></div>
 
 
@@ -50,7 +69,7 @@ function CouponCard(props: IProps) {
                         <GiShoppingCart/></Button>
                     : <div>
                         <Button className="btn btn-light" onClick={loginToggle}>Login</Button>
-                       <LoginModal isOpen={isLoginModalOpen} toggle={loginToggle} isLoggedIn={false}/> </div>
+                        <LoginModal isOpen={isLoginModalOpen} toggle={loginToggle} isLoggedIn={false}/></div>
                 }
 
                 <CouponModal isOpen={isCouponModalOpen} toggle={couponToggle} id={props.coupon.id}/>
@@ -58,5 +77,4 @@ function CouponCard(props: IProps) {
         </div>
     );
 }
-
 export default CouponCard;
